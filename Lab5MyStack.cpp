@@ -89,5 +89,9 @@ void MyStack::push(char & c)
 {
 	stack.push_back(c);
 }
-
+char MyStack::pull()
+{
+	char last = stack.back();
+	stack.pop_back();
+	return last;
 }
