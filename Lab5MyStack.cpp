@@ -1,33 +1,93 @@
 #include "Lab5MyStack.h"
 
 //TODO:
-std::string stringReversal1(std::string input){
-
+string stringReversal1(string input)
+{
+	stack<char> newStack;
+	for (int i = 0; i < input.length(); i++)
+	{
+		newStack.push(input.at(i));
+	}
+	string reverseString;
+	while (!newStack.empty())
+	{
+		reverseString.push_back(newStack.top());
+		newStack.pop();
+	}
+	return reverseString;
 }
-//TODO:
-std::string stringReversal2(std::string input){
+string stringReversal2(string input)
+{
+	vector<char> newVector;
 
-}
-//TODO:
-std::string stringReversal3(std::string input){
+	for (int i = 0; i < input.length(); i++)
+	{
+		newVector.push_back(input.at(i));
+	}
 
-}
-//TODO:
-std::string stringReversal4(std::string input){
+	string reverseString;
 
-}
+	while (!newVector.empty())
+	{
+		reverseString.push_back(newVector.back());
+		newVector.pop_back();
+	}
 
-//TODO:
-bool MyStack::isEmpty() const{
-
-}
-
-//TODO:
-void MyStack::push(char& c){
-
+	return reverseString;
 }
 
-//TODO:
-char MyStack::pull(){
+string stringReversal3(string input)
+{
+	list<char> newList;
+
+	for (int i = 0; i < input.length(); i++)
+	{
+		newList.push_back(input.at(i));
+	}
+	string reversedString;
+
+	while (!newList.empty())
+	{
+		reversedString.push_back(newList.back());
+		newList.pop_back();
+	}
+
+	return reversedString;
+}
+
+string stringReversal4(string input)
+{
+	MyStack newStack;
+	for (int i = 0; i < input.length(); i++)
+	{
+		newStack.push(input.at(i));
+	}
+
+	string reverseString;
+	while (!newStack.isEmpty())
+	{
+		reverseString.push_back(newStack.pull());
+	}
+
+	return reverseString;
+}
+
+
+bool MyStack::isEmpty() const
+{
+	if (stack.empty())
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+}
+
+void MyStack::push(char & c)
+{
+	stack.push_back(c);
+}
 
 }
